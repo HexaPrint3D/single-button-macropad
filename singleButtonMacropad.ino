@@ -105,6 +105,7 @@ void printGerman(String text) { // I am using a german keyboard layout and the l
 void write() { // defines what should happen when the button is pressed
   // ------------------------------ you can replace this code with your own --------------------------------------------------------------------
 
+  //                               red,green,blue
   pixel.setPixelColor(0, pixel.Color(0, 0, 200)); // this sets the onboard rgb led to blue
   pixel.show();
 
@@ -112,7 +113,7 @@ void write() { // defines what should happen when the button is pressed
 
   keyboard.press(KEY_LEFT_GUI); // this presses the key combo win + d
   keyboard.press('d');          //
-  delay(10);                    // 
+  delay(50);                    // 
   keyboard.releaseAll();        //  
   
   delay(700);
@@ -128,14 +129,18 @@ void setup() {
   pixel.clear();
   
   pinMode(switchpin, INPUT_PULLUP);
-  delay(5000);
+  delay(2500);
 }
 
 void loop() {
   buttonState = digitalRead(switchpin);
-
   if (buttonState == LOW) {
     write();
-    delay(700); 
+    while(digitalRead(switchpin) == LOW) {
+      delay(10); 
+    }
+    delay(50);
   }
+
+  delay(10);
 }
