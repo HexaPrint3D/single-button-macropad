@@ -11,4 +11,4 @@ I built a single-button macropad!
 - 3d Printer for case
 - soldering iron
 
-files for 3d printing: `https://www.printables.com/model/1773255-single-button-macropad`
+files for 3d printing: https://www.printables.com/model/1773255-single-button-macropad
